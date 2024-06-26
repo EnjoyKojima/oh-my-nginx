@@ -2,7 +2,7 @@ FROM oven/bun
 
 WORKDIR /app
 
-COPY . .
+# COPY . /app
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \

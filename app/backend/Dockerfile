@@ -2,7 +2,7 @@ FROM oven/bun
 
 WORKDIR /app
 
-COPY . .
+# COPY . /app
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
@@ -10,6 +10,7 @@ RUN apt-get update \
     unzip \
     && apt-get clean
 
-RUN bun install
+# RUN bun install
 
-CMD ["bun", "run", "serve"]
+# CMD ["bun", "run", "serve"]
+CMD ["tail", "-f", "/dev/null"]
