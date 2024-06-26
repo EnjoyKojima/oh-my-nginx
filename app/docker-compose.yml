@@ -21,6 +21,10 @@ services:
       - ./backend:/app
     tty: true
     stdin_open: true
+    networks:
+      default:
+        aliases:
+          - api.kojima.localhost
 
 networks:
   default:
