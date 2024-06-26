@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "serve": "bun run serve.ts",
+        "dev": "bun run --hot serve.ts"
+    },
+    "dependencies": {
+        "hono": "^4.4.8"
+    }
+}

@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      VIRTUAL_HOST: 'app.kojima.localhost'
+    volumes:
+      - ./frontend:/app
+    tty: true
+    stdin_open: true
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      VIRTUAL_HOST: 'api.kojima.localhost'
+    volumes:
+      - ./backend:/app
+    tty: true
+    stdin_open: true
+
+networks:
+  default:
+    external: true
+    name: my-network
