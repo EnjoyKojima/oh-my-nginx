@@ -1,5 +1,3 @@
-version: '3.5'
-
 services:
   frontend:
     build:
@@ -11,6 +9,9 @@ services:
       - ./frontend:/app
     tty: true
     stdin_open: true
+    networks:
+      - kojima
+      - my-network
   backend:
     build:
       context: ./backend
@@ -22,11 +23,10 @@ services:
     tty: true
     stdin_open: true
     networks:
-      default:
-        aliases:
-          - api.kojima.localhost
+      - kojima
+      - my-network
 
 networks:
-  default:
+  kojima:
+  my-network:
     external: true
-    name: my-network
